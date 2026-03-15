@@ -19,14 +19,14 @@ cd MMM-CalendarExt3Agenda && npm install && cd ..
 
 cd ..
 
-echo "==> Setting up config..."
-if [ ! -f .env ]; then
-  cp .env.sample .env
+echo "==> Setting up secrets..."
+if [ ! -f config/secrets.js ]; then
+  cp config/secrets.js.sample config/secrets.js
   echo ""
-  echo "  !! Edit .env and set your GCAL_URL before starting !!"
+  echo "  !! Edit config/secrets.js and set your GCAL_URL before starting !!"
   echo ""
 else
-  echo "  .env already exists, skipping."
+  echo "  config/secrets.js already exists, skipping."
 fi
 
 echo "==> Done. Run 'npm start' to launch MagicMirror."

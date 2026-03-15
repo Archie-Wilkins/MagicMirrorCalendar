@@ -72,6 +72,7 @@ config/config.js
 !config/config.js.template
 
 # Ignore secrets
+config/secrets.js
 .env
 
 # Vim
