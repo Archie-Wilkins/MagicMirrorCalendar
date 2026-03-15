@@ -1,4 +1,4 @@
-var secrets = require("./secrets.js");
+
 let config = {
 	address: "localhost",
 	port: 8080,
@@ -26,7 +26,7 @@ modules: [
       calendars: [
         {
           name: "gcal",
-          url: secrets.GCAL_URL
+          url: "https://calendar.google.com/calendar/ical/<your-calendar-id>/basic.ics"
         }
       ]
     }
@@ -78,7 +78,7 @@ modules: [
       calendars: [
         {
           name: "gcal",
-          url: secrets.GCAL_URL
+          url: "https://calendar.google.com/calendar/ical/<your-calendar-id>/basic.ics"
         }
       ]
     }

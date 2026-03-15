@@ -14,7 +14,7 @@ cd MagicMirror
 bash setup.sh
 ```
 
-Then edit `.env` with your calendar URL and start:
+Then edit `config/config.js`, set your Google Calendar ICS URL in the two `url:` fields, and start:
 
 ```bash
 npm start
@@ -42,18 +42,12 @@ cd modules/MMM-CalendarExt3 && npm install && cd ../..
 cd modules/MMM-CalendarExt3Agenda && npm install && cd ../..
 ```
 
-#### 4. Configure secrets
+#### 4. Configure your calendar URL
 
-Copy the sample env file and fill in your Google Calendar ICS URL:
+Edit `config/config.js` and replace the `url:` values with your Google Calendar ICS URL:
 
-```bash
-cp .env.sample .env
-```
-
-Edit `.env`:
-
-```
-GCAL_URL=https://calendar.google.com/calendar/ical/<your-calendar-id>/basic.ics
+```js
+url: "https://calendar.google.com/calendar/ical/<your-calendar-id>/basic.ics"
 ```
 
 To find your ICS URL: Google Calendar → Settings → your calendar → "Secret address in iCal format".
@@ -63,8 +57,6 @@ To find your ICS URL: Google Calendar → Settings → your calendar → "Secret
 ```bash
 npm start
 ```
-
-MagicMirror will automatically generate `config/config.js` from `config/config.js.template` using your `.env` values.
 
 ## Layout
 

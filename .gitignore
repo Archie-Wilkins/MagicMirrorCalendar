@@ -66,13 +66,9 @@ Temporary Items
 !/css/main.css
 !/css/roboto.css
 
-# Ignore users config file but keep the sample and template.
-config/config.js
+# Keep config but not the template (no longer used)
 !config/config.js.sample
-!config/config.js.template
 
-# Ignore secrets
-config/secrets.js
 .env
 
 # Vim
