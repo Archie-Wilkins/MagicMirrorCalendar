@@ -1,0 +1,159 @@
+/* Right-hand calendar (MMM-CalendarExt3) overrides */
+
+/* 1. Centre day-of-week headers */
+.MMM-CalendarExt3 .CX3 .headerContainer .weekday {
+  text-align: center !important;
+}
+
+/* 2. Remove date header row background */
+.MMM-CalendarExt3 .CX3 .cellHeader {
+  background-color: transparent;
+}
+
+/* 3. Fully transparent cell backgrounds and borders */
+.MMM-CalendarExt3 .CX3 {
+  --cellbgcolor: transparent;
+  --celllinecolor: transparent;
+}
+
+.MMM-CalendarExt3 .CX3 .thisMonth {
+  background-color: transparent;
+}
+
+/* Width — stretch calendar to use more of the screen */
+.MMM-CalendarExt3 {
+  width: 55vw;
+}
+
+/* Larger clock */
+.module.clock .large {
+  font-size: 7rem;
+}
+
+/* Left agenda — fill available vertical space */
+.MMM-CalendarExt3Agenda {
+  /* background: hotpink; */
+  width: calc(45vw - var(--gap-body-left) - var(--gap-body-right) - var(--gap-modules));
+  max-width: unset;
+  height: calc(100vh - var(--gap-body-top) - var(--gap-body-bottom) - 160px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.MMM-CalendarExt3Agenda .CX3A {
+  max-width: unset;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.MMM-CalendarExt3Agenda .CX3A .agenda {
+  max-height: unset !important;
+  height: 100%;
+}
+
+/* Hide dot indicator */
+.MMM-CalendarExt3Agenda .CX3A .event .headline .symbol.noSymbol::after,
+.MMM-CalendarExt3 .CX3 .event.singleday .headline:not(.useSymbol)::before,
+.MMM-CalendarExt3 .CX3 .event.singleday .headline.useSymbol .symbol.noSymbol::before {
+  display: none !important;
+}
+.MMM-CalendarExt3Agenda .CX3A .event {
+  display: flex;
+  flex-direction: column;
+  background: rgb(255 255 255 / 8%);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 6px 0;
+  font-size: 170%;
+}
+
+/* Headline: wrap so times sit on one line, title drops below */
+.MMM-CalendarExt3Agenda .CX3A .event .headline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 4px;
+}
+
+.MMM-CalendarExt3Agenda .CX3A .event .headline .time {
+  font-size: 80%;
+  color: goldenrod;
+  order: 1;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.MMM-CalendarExt3Agenda .CX3A .event .headline .startTime::after {
+  content: " –" !important;
+}
+
+/* Title fills full width, forcing it onto its own line */
+.MMM-CalendarExt3Agenda .CX3A .event .headline .title {
+  order: 2;
+  font-size: 100%;
+  white-space: normal;
+  width: 100%;
+  margin-top: 6px;
+  padding-left: 4px;
+}
+/* .MMM-CalendarExt3 .CX3 .headerContainer { background: hotpink; } */
+/* .MMM-CalendarExt3 .CX3 .cellContainer   { background: dodgerblue; } */
+/* .MMM-CalendarExt3 .CX3 .eventContainer  { background: gold; } */
+
+/* DEBUG: left agenda sections */
+/* .MMM-CalendarExt3Agenda .CX3A .cellHeader     { background: hotpink; } */
+/* .MMM-CalendarExt3Agenda .CX3A .cellBody       { background: dodgerblue; } */
+/* .MMM-CalendarExt3Agenda .CX3A .cellFooter     { background: gold; } */
+
+/* Date number pill */
+.MMM-CalendarExt3 .CX3 .cell:not(.today) .cellDate {
+  background-color: rgb(255 255 255 / 15%);
+  border-radius: 4px;
+  padding: 1px 5px;
+  display: inline-block;
+}
+
+.MMM-CalendarExt3 .CX3 .today .cellDate {
+  border-radius: 4px;
+}
+.MMM-CalendarExt3 .CX3.bodice {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--gap-body-top) - var(--gap-body-bottom));
+}
+
+.MMM-CalendarExt3 .CX3 .headerContainer {
+  flex-shrink: 0;
+}
+
+.MMM-CalendarExt3 .CX3 .week {
+  flex: 1 1 0;
+  height: unset !important;
+  position: relative;
+}
+
+.MMM-CalendarExt3 .CX3 .week .cellContainer,
+.MMM-CalendarExt3 .CX3 .week .cell {
+  height: 100% !important;
+}
+
+.MMM-CalendarExt3 .CX3 .week .eventContainer {
+  height: calc(100% - var(--cellheaderheight)) !important;
+  bottom: 0;
+  top: unset;
+}
+
+/* Event cards in grid — only single day events */
+.MMM-CalendarExt3 .CX3 .event.singleday {
+  background: rgb(255 255 255 / 18%);
+  border-radius: 4px;
+  margin: 1px 0 1px 1px;
+  padding-left: 4px;
+}
+.MMM-CalendarExt3 .CX3 .weekend_1,
+.MMM-CalendarExt3 .CX3 .weekend_2 {
+  color: goldenrod;
+}

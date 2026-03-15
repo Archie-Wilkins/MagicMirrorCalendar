@@ -60,14 +60,19 @@ Temporary Items
 
 # Ignore changes to the custom css files but keep the sample and main.
 /css/*
+!/css/custom.css
 !/css/custom.css.sample
 !/css/font-awesome.css
 !/css/main.css
 !/css/roboto.css
 
-# Ignore users config file but keep the sample.
-config
+# Ignore users config file but keep the sample and template.
+config/config.js
 !config/config.js.sample
+!config/config.js.template
+
+# Ignore secrets
+.env
 
 # Vim
 ## swap
