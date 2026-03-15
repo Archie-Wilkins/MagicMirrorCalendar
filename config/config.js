@@ -74,13 +74,7 @@ modules: [
       showWeekNumber: false,
       eventHeight: "18px",
       showEvents: true,
-      useSymbol: false,
-      calendars: [
-        {
-          name: "gcal",
-          url: "https://calendar.google.com/calendar/ical/<your-calendar-id>/basic.ics"
-        }
-      ]
+      useSymbol: false
     }
   }
 
